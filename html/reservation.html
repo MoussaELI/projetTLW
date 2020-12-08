@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+  <html lang="fr">
+    <head>
+      <link rel="stylesheet" href="../css/style.css">
+      <script type="text/javascript" src="../js/destinations.js"></script>
+      <script type="text/javascript" src="../js/utils.js"></script>
+      <script type="text/javascript" src="../js/reservation.js"></script>
+
+      <meta charset="UFT-8">
+      <title>agence TM</title>
+            
+    </head>
+
+
+    <body>
+
+      <header>
+        <nav id="navi" class="navbar navbar-expand-lg fixed-top py-3">
+          <div class="container">
+              <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a href="accueil.html" class="nav-link text-uppercase font-weight-bold">Accueil<span class="sr-only"></span></a></li>
+                    <form>
+                      <input type="search" id="search" name="search" placeholder="Recherche..."/>
+                    </form>
+                    <li class="nav-item"><a href="photo.html" class="nav-link text-uppercase font-weight-bold">Photos</a></li>
+                    <a href="accueil.html" class="navbar-brand text-uppercase font-weight-bold">
+                      <img src="../images/logo.png" style="width:50%" alt="Logo de l'entreprise Master Trip">
+                    </a>
+                    <li class="nav-item"><a href="recap.html" class="nav-link text-uppercase font-weight-bold">Panier</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+                    <button id="userbutton" onclick="connect()"><i class="fa fa-user-o" id="usericon"></i><div id="player"></div>
+
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <div id="fadediv" onclick="disconnect()"></div>
+        <div id="formulaires" style="display: none; z-index:5;">
+          <div id="formcontent">
+            <h2 onclick="connectfade()" class="connectiontitle">Me connecter <i class="fa fa-chevron-right" id="connectchev"></i></h2>
+            <form id="meconnecter" style="display: none;">
+              <p><label for="pseudo">Votre pseudo ou email : </label><input type="text" name="pseudo" id="connectid" /></p>
+              <p><label for="password">Votre mot de passe :  </label><input id="connectpwd" type="password" placeholder="mot de passe"/></p>
+              <button id="signin">Me connecter</button>
+            </form>
+            <p class="connectiontitle">Ou alors</p>
+            <h2 onclick="registerfade()" class="connectiontitle">M'inscrire <i class="fa fa-chevron-right" id="registerchev"></i></h2>
+            <form id="minscrire" style="display: none;">
+              <p><label for="pseudo">Votre pseudo ou email : </label><input type="text" name="pseudo" id="registerid" /></p>
+              <p><label for="password">Votre mot de passe : </label><input class="registerpwd" id="firstPass" type="password" placeholder="mot de passe"/></p>
+              <input class="registerpwd" id="confirmPass" type="password" placeholder="Confirmez votre mot de passe"/>
+              <button id="signup">Enregistrer</button>
+            </form>
+          </div>
+        </div>
+      </header>
+
+        <form name="formulaire" action="recap.html" method="GET";>
+          <div class="formulaire">
+         
+            <h2>Formulaire de reservation : </h2> <br>
+              <!-- formulaire à remplir par le client-->
+              <p><label for="Nom">Nom* : </label>
+                <input type="text" name="Nom" id="Nom" class="champs" required><br>
+
+                <label for="Prenom">Prénom* : </label>
+                <input type="text" name="Prenom" id="Prenom" class="champs" required><br>
+
+                <label for="Mail">Adresse mail* : </label>
+                <input type="email" name="Mail" id="Mail" class="champs" required><br>
+
+                <label for="Telephone">Numéro de téléphone* : </label>
+                <input type="tel" name="Telephone" id="Telephone" class="champs" required><br>
+
+                <label for="DateDep">Date de départ* : </label>
+                <input type="date" name="DateDep" id="DateDep" class="champs" required><br>
+
+                <label for="DateRet">Date de retour* : </label>
+                <input type="date" name="DateRet" id="DateRet" class="champs" required><br>
+
+                <label for="NBadultes">Nombre d'adultes* : </label>
+                <input type="number" name="NBadultes" id="NBadultes" class="champs" required><br>
+
+                <label for="NBenfants">Nombre d'enfatns (-12ans)* : </label>
+                <input type="number" name="NBenfants" id="NBenfants" class="champs"required><br>
+
+                <label for="Pdej">Petit déjeunner : </label>
+                <input type="radio" name="Pdej" value="Oui" id="OuiDej"  checked> Oui
+                <input type="radio" name="Pdej" value="Non" id="NonDej"  checked> Non <br>
+                <br>
+
+                <label for="Animaux">Animaux : </label>
+                <input type="radio" name="Animaux" value="Oui" id="OuiAni"  checked> Oui 
+                <input type="radio" name="Animaux" value="Non" id="NonAni"  checked> Non <br>
+                <br>
+
+                <label for="attention">/!\ l'indication "*" signifie champs obligatoires /!\ </label>
+              </p>
+          
+            <div class="button-submit">
+              <input type="submit" value="Valider" class="champs">
+            </div>
+            <br>
+            <div class="button-reset">
+              <input type="reset" value="Réinititaliser" class="champs">
+            </div>
+          </div>
+        </form>
+
+        <p class="p1" id="titre"></p>
+        
+        <div class="PhotoRes">
+          <img id="photo" with="50%">
+        </div>
+        
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="../images/avion.png" style="width: 100%" alt="image d'un avion qui monte en haut permettant de retourner en haut de la page"></button>
+
+      </body>
+  </html>

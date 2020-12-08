@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+  <html lang="fr">
+    <head>
+      <link rel="stylesheet" href="../css/style.css">
+            
+      <script type="text/javascript" src="../js/slideshow.js"></script>
+      <script type="text/javascript" src="../js/accueil.js" ></script>
+      <script type="text/javascript" src="../js/utils.js" ></script>
+      <script type="text/javascript" src="../js/destinations.js" ></script>
+
+      <meta charset="UFT-8">
+      <title>agence TM</title>
+      <!-- fonction qui appelle la map -->
+      <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPPsNnYQdroNrlIVy2y0GboZZn57QH2Uw&callback=initMap" defer></script> 
+
+            
+    </head>
+
+
+    <body>
+
+      <header>
+        <nav id="navi" class="navbar navbar-expand-lg fixed-top py-3">
+          <div class="container">
+              <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a href="accueil.html" class="nav-link text-uppercase font-weight-bold">Accueil<span class="sr-only"></span></a></li>
+                    <form>
+                      <input type="search" id="search" name="search" placeholder="Recherche..."/>
+                    </form>
+                    <li class="nav-item"><a href="photo.html" class="nav-link text-uppercase font-weight-bold">Photos</a></li>
+                    <a href="accueil.html" class="navbar-brand text-uppercase font-weight-bold">
+                      <img src="../images/logo.png" style="width:50%" alt="Logo de l'entreprise Master Trip">
+                    </a>
+                    <li class="nav-item"><a href="recap.html" class="nav-link text-uppercase font-weight-bold">Panier</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+                    <button id="userbutton" onclick="connect()"><i class="fa fa-user-o" id="usericon"></i><div id="player"></div>
+
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <!-- fonctions pour gérer l'espace privé: déconnection, connection , s'enregistrer -->
+        <div id="fadediv" onclick="disconnect()"></div>
+        <div id="formulaires" style="display: none; z-index:5;">
+          <div id="formcontent">
+            <h2 onclick="connectfade()" class="connectiontitle">Me connecter <i class="fa fa-chevron-right" id="connectchev"></i></h2>
+            <form id="meconnecter" style="display: none;">
+              <p><label for="pseudo">Votre pseudo ou email : </label><input type="text" name="pseudo" id="connectid" /></p>
+              <p><label for="password">Votre mot de passe :  </label><input id="connectpwd" type="password" placeholder="mot de passe"/></p>
+              <button id="signin">Me connecter</button>
+            </form>
+            <p class="connectiontitle">Ou alors</p>
+            <h2 onclick="registerfade()" class="connectiontitle">M'inscrire <i class="fa fa-chevron-right" id="registerchev"></i></h2>
+            <form id="minscrire" style="display: none;">
+              <p><label for="pseudo">Votre pseudo ou email : </label><input type="text" name="pseudo" id="registerid" /></p>
+              <p><label for="password">Votre mot de passe : </label><input class="registerpwd" id="firstPass" type="password" placeholder="mot de passe"/></p>
+              <input class="registerpwd" id="confirmPass" type="password" placeholder="Confirmez votre mot de passe"/>
+              <button id="signup">Enregistrer</button>
+            </form>
+          </div>
+        </div>
+      </header>
+      <!-- balise permettant d'afficher le header au premier plan -->
+      <section class="bloc.principal">
+  
+        <h1 class="txt">Agence de voyage MT</h1>
+          
+        <p>
+          Envie de vous évader ? <br>
+          Envie de partir ? <br>
+          Décollez vers la destination de vos rêves avec notre agence de voyage. <br>
+        </p>
+    
+        <!-- div contenant la fonction qui affiche toutes les destinations avec des diapos d'images correspondantes et la température en direct -->
+        <div id="dests"></div>
+
+        <br>
+        <!-- map tout en bas de la page -->
+        <div id="map"></div>
+
+      </section> 
+      <!-- boutton pour remonter en haut de page -->          
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="../images/avion.png" style="width: 100%" alt="image d'un avion qui monte en haut permettant de retourner en haut de la page"></button> 
+        
+    </body>
+  </html>
